@@ -110,9 +110,20 @@ h2 {
 .nav-contact {
     font-weight: 700;
 }
+#menu-toggle {
+    display: none;
+}
+.menu-dots {
+    display: none;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1;
+    cursor: pointer;
+    user-select: none;
+}
 /*hero*/
 .hero {
-    min-height: max(650px, 48vw);   /* taller so the bigger image isn't cropped */
+    min-height: max(650px, 48vw);  
     position: relative;
     overflow: hidden;
     display: flex;
@@ -121,10 +132,10 @@ h2 {
     background: #ffffff;
 }
 .hero-text {
-    width: 96%;                      /* was min(1200px, 90%) */
+    width: 96%;                      
     position: relative;
     z-index: 2;
-    padding-top: 6vw;                /* pushes the name lower so the head sticks up above it */
+    padding-top: 6vw;   
 }
 .hero-intro {
     font-size: 1.2rem;
@@ -132,7 +143,7 @@ h2 {
     margin-bottom: 5px;
 }
 .hero h1 {
-    font-size: 22vw;                 /* no 15rem cap, scales with the screen */
+    font-size: 22vw;
     line-height: 0.75;
     letter-spacing: -0.06em;
     font-weight: 900;
@@ -151,7 +162,7 @@ h2 {
     position: absolute;
     bottom: 0;
     left: 50%;
-    width: 34vw;                     /* was 420px */
+    width: 34vw;   
     min-width: 420px;
     transform: translateX(-50%);
     z-index: 3;
@@ -471,6 +482,9 @@ h2 {
     .hero-image { 
         width: 45vw; min-width: 0; 
     }
+    .hero-description {
+        max-width: 300px;
+    }
     .about-content,
     .beyond-content {
         grid-template-columns: 1fr;
@@ -511,33 +525,76 @@ h2 {
         padding: 12px 15px;
         border-radius: 14px;
     }
+    .menu-dots {
+        display: block;
+    }
     .nav-menu {
-        gap: 10px;
+        display: none;
+        position: absolute;
+        top: 65px;
+        right: 10px;
+        width: 180px;
+        padding: 15px;
+        background: #c7c7c7;
+        border-radius: 15px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
     }
     .nav-menu a {
-        font-size: 0.7rem;
+        display: block;
+        padding: 10px 12px;
+        font-size: 0.85rem;
+        border-radius: 8px;
     }
-    .nav-menu a:nth-child(2),
-    .nav-menu a:nth-child(3) {
-        display: none;
+    .nav-menu a:hover {
+        background: #ffffff;
+    }
+    #menu-toggle:checked ~ .nav-menu {
+        display: flex;
     }
     .hero {
         min-height: 550px;
         align-items: flex-start;
-        padding-top: 100px;
+        padding: 100px 12px 30px;
     }
     .hero-text {
-        text-align: center;
+        width: 100%;
+        padding-top: 0;
+        text-align: left;
+        position: relative;
+        z-index: 4;
+    }
+    .hero-intro {
+        font-size: 1rem;
+        margin-bottom: 5px;
     }
     .hero h1 {
         font-size: 21vw;
+        line-height: 0.8;
+        text-align: center;
+        
     }
     .hero-description {
-        margin: 25px auto 0;
-        max-width: 200px;
+        width: 100%;
+        max-width: 170px;
+        margin-top: 25px;
+        font-size: 0.85rem;
+        line-height: 1.5;
+        text-align: left;
     }
-    .hero-image { 
-        width: 75vw; min-width: 0;
+    .hero-text .primary-button {
+        margin-top: 15px;
+    }
+    .hero-image {
+        position: absolute;
+        width: 60vw;
+        min-width: 0;
+        left: 50%;
+        bottom: 0px;
+        transform: translateX(-50%);
+        z-index: 5;
     }
     .about {
         padding: 60px 0;
